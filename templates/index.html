@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Добро пожаловать в {{ title }}  <br>.
+Тут собрано {{ autos|length }} автомобиля из моей личной коллекции.
+
+<ul>
+    {% for auto in autos %}
+    <li>{{ auto }}</li>
+    {% endfor %}
+</ul>
+<form action="/search" method="get">
+  <input name="q" type="text" placeholder="Sear...">
+</form>
+<ul>
+  {% for auto in object_list %}
+    <li>
+      {{ auto.model }}, {{ auto.manufacturer }}
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
